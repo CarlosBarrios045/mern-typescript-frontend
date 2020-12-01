@@ -24,7 +24,7 @@ interface IUserId {
   id: string;
 }
 
-const Form: React.SFC = () => {
+const Form: React.SFC = (): JSX.Element => {
   const initialData = {
     title: "",
     description: "",
@@ -56,7 +56,7 @@ const Form: React.SFC = () => {
         setData(initialData);
         push("/");
       } catch (error) {
-        console.error("Error create video ->", error);
+        // Error
       }
     }
   };
@@ -68,7 +68,7 @@ const Form: React.SFC = () => {
       setData({ title: d?.title, description: d?.description, url: d?.url });
       setLoading(false);
     } catch (e) {
-      console.error("Error Get Videos ->", e);
+      // Error
       setLoading(false);
     }
   };
